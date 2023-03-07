@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Bartosz Garba">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Restauracja Sztos Burger</title>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="navbar">
+            <img src="burger_logo.png">
+        <ul>
+            <li><button onclick="niedziala()"><a href="#">O NAS</a></button></li>
+            <li><button onclick="niedziala()"><a href="#">LOKALIZACJE</a></button></li>
+            <li><button onclick="niedziala()"><a href="#">KONTAKT</a></button></li>
+        </ul>
+
+    </div>
+
+    <div class="left-main">
+        <h1>SZTOS BURGER TO <span class="text-auto"></span></h1>
+        <p>Znajdź najbliższą restaurację i wpadaj!</p>
+        <p class="test">Wpisz swój kod pocztowy</p><br>
+        <input type="text" id="dostawa" placeholder="Np. 60-201">
+        <button onClick="dostawa()">SPRAWDŹ</button>
+        <br><span id="dostawaclass"></span>
+
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
+    </div>
+
+    <div class="right-main">
+        <img src="burger_full.png">
+    </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+    var typed = new Typed(".text-auto",{
+        strings: ["JAKOŚĆ!","PERFEKCJA!","MY!"],
+        typeSpeed:200,
+        backSpeed:250,
+        loop:true
+    })
+</script>
+<script>
+    function dostawa(){
+        var kod = document.getElementById("dostawa").value;
+        if(kod.length < 1){
+        document.getElementById("dostawaclass").innerHTML = 'Nie wprowadzono kodu pocztowego!';
+        } else if(kod.length < 6 || kod.length > 6) {
+        document.getElementById("dostawaclass").innerHTML = 'Wprowadź prawidłowy kod pocztowy!';
+        } else {
+        document.getElementById("dostawaclass").innerHTML = 'Kod pocztowy ' +kod+ ' znajduje sie w strefie dostaw!';
+    }
+}
+    function niedziala(){
+        alert("Funkcja w przygotowaniu");
+    }
+</script>
+
+
+</body>
+</html>
